@@ -53,9 +53,9 @@ WHERE data_zak < CURRENT_DATE
 ```
 **Jaki jest zysk ze sprzedaży biletów na wystawach według kuratorów odpowiadających za wystawę?**
 ```
-SELECT kurator.nr, imie, nazwisko, COALESCE(SUM(cena_biletu * sprzedane_bilety), 0) AS zysk_z_wystaw
+SELECT kurator.nr, imie, nazwisko, SUM(cena_biletu * sprzedane_bilety) AS zysk_z_wystaw
 FROM kurator, wystawa
-WHERE kurator.nr = wystawa.nr_kurator
+WHERE kurator.nr = wystawa.nr_kurator AND wystawa.data_zak < CURRENT_DATE
 GROUP BY kurator.nr
 ```
 
