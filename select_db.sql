@@ -2,12 +2,7 @@
 CREATE VIEW widok_dziela_autorzy AS SELECT a.nr AS numer_artysty, imie, nazwisko, d.nr AS numer_dziela, tytul 
 FROM (artysta a INNER JOIN artysta_dzielo ad ON a.nr = ad.nr_artysta)
 INNER JOIN dzielo d ON d.nr = ad.nr_dzielo
-
---Wyszukaj dzieła i ich autorów
-SELECT a.nr, imie, nazwisko, tytul 
-FROM (artysta a INNER JOIN artysta_dzielo ad ON a.nr = ad.nr_artysta)
-INNER JOIN dzielo d ON d.nr = ad.nr_dzielo 
-ORDER BY d.tytul
+ORDER BY numer_artysty
 
 --Wyszukaj dzieła konkretnego autora
 SELECT d.nr, tytul
@@ -26,7 +21,7 @@ SELECT * FROM dzielo
 WHERE sprzedaz_nr IS NULL AND cena IS NOT NULL 
 
 --Oblicz zysk ze sprzedaży biletów na minionych wystawach
-SELECT nr, tytuł, sprzedane_bilety * cena_biletu AS zysk
+SELECT nr, tytul, sprzedane_bilety * cena_biletu AS zysk
 FROM wystawa
 WHERE data_zak < CURRENT_DATE
 
@@ -37,7 +32,7 @@ WHERE kurator.nr = wystawa.nr_kurator AND wystawa.data_zak < CURRENT_DATE
 GROUP BY kurator.nr
 
 --Wyszukaj dzieła, które nigdy nie były wystawiane i nie są sprzedane
-SELECT nr, tytul, typ
+SELECT nr, tytul, nr_typ
 FROM dzielo
 WHERE nr NOT IN (SELECT nr_dzielo FROM dziela_na_wystawie) AND sprzedaz_nr IS NULL
 

@@ -1,4 +1,4 @@
-INSERT INTO artysta (imie,nazwisko,miasto,kod_pocztowy,ulica_dom,nr_tel) VALUES
+INSERT INTO artysta (imie, nazwisko, miasto, kod_pocztowy, ulica_dom, nr_tel) VALUES
 (NULL, 'Kowalski', 'Warszawa', '00-001', 'Aleje Jerozolimskie 10', '123456789'),
 ('Anna', 'Nowak', 'Kraków', '30-001', 'Rynek Główny 20', '987654321'),
 ('Piotr', 'Wiśniewski', 'Gdańsk', '80-001', 'Długa 15', '112233445'),
@@ -37,7 +37,8 @@ INSERT INTO typ_dziela (forma, material) VALUES
 ('Rzeźba', 'Gips'),
 ('Rzeźba', 'Drewno'),
 ('Performance', 'brak'),
-('Fotografia', 'brak');
+('Fotografia', 'brak'),
+('Instalacja', 'Metal');
 
 INSERT INTO zamowienie_kupna (nr_klient, data_zlozenia, data_realizacji) VALUES
 (1, '2024-01-01', '2024-02-03'),
