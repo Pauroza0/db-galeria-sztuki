@@ -1,5 +1,9 @@
 # Baza danych dla sieci galerii sztuki
-Projekt ma na celu stworzenie bazy danych, która umożliwia zarządzanie informacjami o konkretnych galeriach, artystach, klientach, kuratorach, działach sztuki,  zamówieniami kupna, wynajmu oraz wystawach. Główny zamysł to zarządzanie zasobami, monitorowanie sprzedaży i pomoc w organizacji wystaw. Składa się z:
+Projekt ma na celu stworzenie bazy danych, która umożliwia zarządzanie informacjami o konkretnych galeriach, artystach, klientach, kuratorach, działach sztuki,  zamówieniami kupna, wynajmu oraz wystawach. Główny zamysł to zarządzanie zasobami, monitorowanie sprzedaży i pomoc w organizacji wystaw.
+
+# Diagram ERD
+![erd](ERD.png)
+
 
 # Encje i atrybuty:
 * Artysta: nr, imie, nazwisko, miasto, kod_pocztowy, ulica_dom, nr_tel
