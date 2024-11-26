@@ -9,17 +9,17 @@ FROM (artysta a INNER JOIN artysta_dzielo ad ON a.nr = ad.nr_artysta)
 INNER JOIN dzielo d ON d.nr = ad.nr_dzielo 
 ORDER BY d.tytul
 
---Użycie widoku do powyższego zapytania
-SELECT numer_dziela, tytul 
-FROM widok_dziela_autorzy 
-WHERE numer_artysty = 1
-
 --Wyszukaj dzieła konkretnego autora
 SELECT d.nr, tytul
 FROM (artysta a INNER JOIN artysta_dzielo ad ON a.nr = ad.nr_artysta)
 INNER JOIN dzielo d ON d.nr = ad.nr_dzielo
 WHERE A.nr = 1
 ORDER BY d.tytul
+
+--Użycie widoku do powyższego zapytania
+SELECT numer_dziela, tytul 
+FROM widok_dziela_autorzy 
+WHERE numer_artysty = 1
 
 --Wyszukaj dzieła, które są na sprzedaż
 SELECT * FROM dzielo 
